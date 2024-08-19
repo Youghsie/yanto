@@ -22,17 +22,17 @@ from pyrogram.types import Message
 
 from config import BANNED_USERS, adminlist
 from strings import get_string
-from DanteMusic import app
-from DanteMusic.misc import SUDOERS
-from DanteMusic.utils.database import (
+from RynMusic import app
+from RynMusic.misc import SUDOERS
+from RynMusic.utils.database import (
     get_assistant,
     get_cmode,
     get_lang,
     get_playmode,
     get_playtype,
 )
-from DanteMusic.utils.logger import play_logs
-from DanteMusic.utils.stream.stream import stream
+from RynMusic.utils.logger import play_logs
+from RynMusic.utils.stream.stream import stream
 
 RADIO_STATION = {
     "Air Bilaspur": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio110/playlist.m3u8",
