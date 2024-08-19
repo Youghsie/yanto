@@ -5,8 +5,8 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from config import BANNED_USERS
-from DanteMusic import app
-from DanteMusic.utils.database import (
+from RynMusic import app
+from RynMusic.utils.database import (
     delete_note,
     deleteall_notes,
     get_note,
@@ -16,14 +16,14 @@ from DanteMusic.utils.database import (
     set_private_note,
 )
 from utils.error import capture_err
-from DanteMusic.utils.functions import (
+from RynMusic.utils.functions import (
     check_format,
     extract_text_and_keyb,
     get_data_and_name,
 )
-from DanteMusic.utils.note_funcs import send_notes
-from DanteMusic.utils.keyboard import ikb
-from DanteMusic.utils.permissions import adminsOnly, member_permissions
+from RynMusic.utils.note_funcs import send_notes
+from RynMusic.utils.keyboard import ikb
+from RynMusic.utils.permissions import adminsOnly, member_permissions
 
 
 def extract_urls(reply_markup):
