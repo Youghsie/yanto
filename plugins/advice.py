@@ -1,9 +1,9 @@
 from pyrogram import filters
-from TheApi import api as aapi
+from TheApi import api
 
 from config import LOG_GROUP_ID
-from RynMusic import api, app
-
+from RynMusic import app
+from SafeoneAPI import SafeoneAPI
 
 @app.on_message(filters.command("advice"))
 async def advice(_, message):
