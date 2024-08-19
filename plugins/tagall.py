@@ -3,9 +3,9 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.errors import FloodWait
 
-from DanteMusic import app
-from DanteMusic.utils.database import get_assistant
-from DanteMusic.utils.filter import admin_filter
+from RynMusic import app
+from RynMusic.utils.database import get_assistant
+from RynMusic.utils.filter import admin_filter
 
 SPAM_CHATS = []
 
