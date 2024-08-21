@@ -1,7 +1,7 @@
 from pyrogram import enums, filters
 
-from RynMusic import app
-from RynMusic.utils.filter import admin_filter
+from DanteMusic import app
+from DanteMusic.utils.filter import admin_filter
 
 # ------------------------------------------------------------------------------- #
 
