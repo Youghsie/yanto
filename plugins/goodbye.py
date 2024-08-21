@@ -14,7 +14,7 @@ from pyrogram.types import (
 from DanteMusic import app
 from DanteMusic.misc import SUDOERS
 from .notes import extract_urls
-from RynMusic.utils.database import is_gbanned_user
+from DanteMusic.utils.database import is_gbanned_user
 from utils import (
     del_goodbye,
     get_goodbye,
