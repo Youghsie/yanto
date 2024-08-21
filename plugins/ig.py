@@ -1,7 +1,7 @@
 import requests
 from pyrogram import filters
 
-from RynMusic import app
+from DanteMusic import app
 
 
 @app.on_message(filters.command(["ig", "instagram", "reel"]))
