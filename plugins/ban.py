@@ -16,18 +16,18 @@ from pyrogram.types import (
 from string import ascii_lowercase
 from typing import Dict, List, Union
 
-from RynMusic import app
-from RynMusic.misc import SUDOERS
-from RynMusic.core.mongo import mongodb
+from DanteMusic import app
+from DanteMusic.misc import SUDOERS
+from DanteMusic.core.mongo import mongodb
 from utils.error import capture_err
-from RynMusic.utils.keyboard import ikb
-from RynMusic.utils.database import save_filter
-from RynMusic.utils.functions import (
+from DanteMusic.utils.keyboard import ikb
+from DanteMusic.utils.database import save_filter
+from DanteMusic.utils.functions import (
     extract_user,
     extract_user_and_reason,
     time_converter,
 )
-from RynMusic.utils.permissions import adminsOnly, member_permissions
+from DanteMusic.utils.permissions import adminsOnly, member_permissions
 from config import adminlist, BANNED_USERS
 warnsdb = mongodb.warns
 
