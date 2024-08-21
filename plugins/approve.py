@@ -12,11 +12,11 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import ChatJoinRequest
 from pyrogram.errors.exceptions.bad_request_400 import UserAlreadyParticipant
-from RynMusic import app
-from RynMusic.core.mongo import mongodb
-from RynMusic.misc import SUDOERS
-from RynMusic.utils.keyboard import ikb
-from RynMusic.utils.permissions import adminsOnly, member_permissions
+from DanteMusic import app
+from DanteMusic.core.mongo import mongodb
+from DanteMusic.misc import SUDOERS
+from DanteMusic.utils.keyboard import ikb
+from DanteMusic.utils.permissions import adminsOnly, member_permissions
 
 approvaldb = mongodb.autoapprove
 
