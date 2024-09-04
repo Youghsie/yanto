@@ -3,9 +3,9 @@ from config import BOT_USERNAME
 from pyrogram.enums import MessageEntityType
 from pyrogram import filters
 from pyrogram.types import Message
-from RynMusic import app
-from RynMusic.mongo.readable_time import get_readable_time
-from RynMusic.mongo.afkdb import add_afk, is_afk, remove_afk
+from DanteMusic import app
+from DanteMusic.mongo.readable_time import get_readable_time
+from DanteMusic.mongo.afkdb import add_afk, is_afk, remove_afk
 
 
 
