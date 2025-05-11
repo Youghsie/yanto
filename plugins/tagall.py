@@ -75,7 +75,7 @@ async def tag_all_users(_, message):
                 if usernum == 5:
                     await app.send_message(
                         message.chat.id,
-                        f"{usertxt}",
+                        f"{text}\n{usertxt}",
                         disable_web_page_preview=True,
                     )
                     await asyncio.sleep(2)
@@ -84,7 +84,7 @@ async def tag_all_users(_, message):
             if usernum != 0:
                 await app.send_message(
                     message.chat.id,
-                    f"{usertxt}",
+                    f"{text}\n{usertxt}",
                     disable_web_page_preview=True,
                 )
         except FloodWait as e:
@@ -159,7 +159,7 @@ async def tag_all_admins(_, message):
                 if usernum == 5:
                     await app.send_message(
                         message.chat.id,
-                        f"{usertxt}",
+                        f"{text}\n{usertxt}",
                         disable_web_page_preview=True,
                     )
                     await asyncio.sleep(2)
@@ -168,7 +168,7 @@ async def tag_all_admins(_, message):
             if usernum != 0:
                 await app.send_message(
                     message.chat.id,
-                    f"{text}{usertxt}",
+                    f"{text}\n{usertxt}",
                     disable_web_page_preview=True,
                 )
         except FloodWait as e:
