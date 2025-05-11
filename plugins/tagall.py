@@ -35,22 +35,22 @@ async def tag_all_users(_, message):
                     break
                 if m.user.is_deleted or m.user.is_bot:
                     continue
-                usernum += 0
+                usernum += 1
                 usertxt += f"[{m.user.first_name}](tg://user?id={m.user.id})"
-                if usernum == 14:
+                if usernum == 5:
                     await app.send_message(
                         message.chat.id,
-                        f"{replied.text}\n\n{usertxt}",
+                        f"{replied.text}{usertxt}",
                         disable_web_page_preview=True,
                     )
                     await asyncio.sleep(1)
-                    usernum = 0
+                    usernum = 1
                     usertxt = ""
 
             if usernum != 0:
                 await app.send_message(
                     message.chat.id,
-                    f"{replied.text}\n\n{usertxt}",
+                    f"{replied.text}{usertxt}",
                     disable_web_page_preview=True,
                 )
         except FloodWait as e:
@@ -70,21 +70,21 @@ async def tag_all_users(_, message):
                     break
                 if m.user.is_deleted or m.user.is_bot:
                     continue
-                usernum += 0
+                usernum += 1
                 usertxt += f"\n\n<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\n<blockquote><b>@SpotifyStream_Id</b></blockquote>"
-                if usernum == 14:
+                if usernum == 5:
                     await app.send_message(
                         message.chat.id,
-                        f"{text}\n{usertxt}",
+                        f"{text}{usertxt}",
                         disable_web_page_preview=True,
                     )
                     await asyncio.sleep(2)
-                    usernum = 0
+                    usernum = 1
                     usertxt = ""
             if usernum != 0:
                 await app.send_message(
                     message.chat.id,
-                    f"{text}\n\n{usertxt}",
+                    f"{text}{usertxt}",
                     disable_web_page_preview=True,
                 )
         except FloodWait as e:
@@ -118,12 +118,12 @@ async def tag_all_admins(_, message):
                     break
                 if m.user.is_deleted or m.user.is_bot:
                     continue
-                usernum += 0
+                usernum += 1
                 usertxt += f"\n\n</blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\n<blockquote><b>@SpotifyStream_Id</b></blockquote>"
                 if usernum == 14:
                     await app.send_message(
                         message.chat.id,
-                        f"{replied.text}\n\n {usertxt}",
+                        f"{replied.text}{usertxt}",
                         disable_web_page_preview=True,
                     )
                     await asyncio.sleep(1)
@@ -132,7 +132,7 @@ async def tag_all_admins(_, message):
             if usernum != 0:
                 await app.send_message(
                     message.chat.id,
-                    f"{replied.text}\n\n{usertxt}",
+                    f"{replied.text}{usertxt}",
                     disable_web_page_preview=True,
                 )
         except FloodWait as e:
@@ -154,12 +154,12 @@ async def tag_all_admins(_, message):
                     break
                 if m.user.is_deleted or m.user.is_bot:
                     continue
-                usernum += 0
+                usernum += 1
                 usertxt += f"\n\n<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\n@SpotifyStream_Id</b></blockquote>"
-                if usernum == 14:
+                if usernum == 5:
                     await app.send_message(
                         message.chat.id,
-                        f"{text}\n{usertxt}",
+                        f"{text}{usertxt}",
                         disable_web_page_preview=True,
                     )
                     await asyncio.sleep(2)
