@@ -119,12 +119,12 @@ async def tag_all_admins(_, message):
                     break
                 if m.user.is_deleted or m.user.is_bot:
                     continue
-                usernum += 0
-                usertxt += ""
-                if usernum == 0:
+                usernum += 1
+                usertxt += f"<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>"
+                if usernum == 7:
                     await app.send_message(
                         message.chat.id,
-                        f"{replied.text}{usertxt}",
+                        f"<blockquote><b>{replied.text}{usertxt}</blockquote></b>\n<blockquote><b>ᴄʀᴇᴀᴛᴇᴅ ʙʏ:\n@SpotifyStream_Id</b></blockquote>",
                         disable_web_page_preview=True,
                     )
                     await asyncio.sleep(1)
