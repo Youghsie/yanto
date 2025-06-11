@@ -8,7 +8,7 @@ from DanteMusic.utils.database import get_assistant
 from DanteMusic.utils.filter import admin_filter
 
 SPAM_CHATS = []
-
+count = 0
 
 @app.on_message(
     filters.command(["all", "allmention", "mentionall", "tagall"], prefixes=["/", "@"])
@@ -36,15 +36,16 @@ async def tag_all_users(_, message):
                 if m.user.is_deleted or m.user.is_bot:
                     continue
                 usernum += 1
-                usertxt += f"[{m.user.first_name}](tg://user?id={m.user.id})"
-                if usernum == 5:
+                usertxt += f"<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\nᴄʀᴇᴀᴛᴇᴅ ʙʏ:\n@SpotifyStream_Id</b></blockquote>"
+                count += 1
+                if usernum == 7:
                     await app.send_message(
                         message.chat.id,
                         f"{replied.text}{usertxt}",
                         disable_web_page_preview=True,
                     )
                     await asyncio.sleep(1)
-                    usernum = 1
+                    usernum = 0
                     usertxt = ""
 
             if usernum != 0:
@@ -72,19 +73,19 @@ async def tag_all_users(_, message):
                     continue
                 usernum += 1
                 usertxt += f"<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\n<blockquote><b>ᴄʀᴇᴀᴛᴇᴅ ʙʏ:\n@SpotifyStream_Id</b></blockquote>"
-                if usernum == 5:
+                if usernum == 7:
                     await app.send_message(
                         message.chat.id,
-                        f"{text}\n{usertxt}",
+                        f"<blockquote><b>{text}</blockquote></b>\n<blockquote><b>{usertxt}</blockquote></b>",
                         disable_web_page_preview=True,
                     )
                     await asyncio.sleep(2)
-                    usernum = 1
-                    usertxt = f"<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\n<blockquote><b>ᴄʀᴇᴀᴛᴇᴅ ʙʏ:\n@SpotifyStream_Id</b></blockquote>"
+                    usernum = 0
+                    usertxt = ""
             if usernum != 0:
                 await app.send_message(
                     message.chat.id,
-                    f"{text}\n{usertxt}",
+                    f"<blockquote><b>{text}</blockquote></b>\n<blockquote><b>{usertxt}</blockquote></b>",
                     disable_web_page_preview=True,
                 )
         except FloodWait as e:
@@ -120,7 +121,7 @@ async def tag_all_admins(_, message):
                     continue
                 usernum += 1
                 usertxt += f"</blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\n<blockquote><b>ᴄʀᴇᴀᴛᴇᴅ ʙʏ:\n@SpotifyStream_Id</b></blockquote>"
-                if usernum == 5:
+                if usernum == 7:
                     await app.send_message(
                         message.chat.id,
                         f"{replied.text}{usertxt}",
@@ -132,7 +133,7 @@ async def tag_all_admins(_, message):
             if usernum != 0:
                 await app.send_message(
                     message.chat.id,
-                    f"{replied.text}{usertxt}",
+                    f"<blockquote><b>{replied.text}{usertxt}</blockquote></b>",
                     disable_web_page_preview=True,
                 )
         except FloodWait as e:
@@ -156,10 +157,10 @@ async def tag_all_admins(_, message):
                     continue
                 usernum += 1
                 usertxt += f"<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\nᴄʀᴇᴀᴛᴇᴅ ʙʏ:\n@SpotifyStream_Id</b></blockquote>"
-                if usernum == 5:
+                if usernum == 7:
                     await app.send_message(
                         message.chat.id,
-                        f"{text}\n{usertxt}",
+                        f"<blockquote><b>{text}</blockquote></b>\n<blockquote><b>{usertxt}</blockquote></b>",
                         disable_web_page_preview=True,
                     )
                     await asyncio.sleep(2)
@@ -168,7 +169,7 @@ async def tag_all_admins(_, message):
             if usernum != 0:
                 await app.send_message(
                     message.chat.id,
-                    f"{text}\n{usertxt}",
+                    f"<blockquote><b>{text}</blockquote></b>\n<blockquote><b>{usertxt}</blockquote></b>",
                     disable_web_page_preview=True,
                 )
         except FloodWait as e:
@@ -222,7 +223,7 @@ async def admintag_with_reporting(client, message):
     for admin in admins:
         admin_member = await client.get_chat_member(chat_id, admin)
         if not admin_member.user.is_bot and not admin_member.user.is_deleted:
-            text += f"[\u2063](tg://user?id={admin})"
+            text += f"<blockquote><b>[\u2063](tg://user?id={admin})</blockquote></b>"
 
     await reply.reply_text(text)
 
