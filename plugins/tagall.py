@@ -36,7 +36,7 @@ async def tag_all_users(_, message):
                 if m.user.is_deleted or m.user.is_bot:
                     continue
                 usernum += 1
-                usertxt += f"<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\nᴄʀᴇᴀᴛᴇᴅ ʙʏ:\n@SpotifyStream_Id</b></blockquote>"
+                usertxt += f"<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\n<blockquote><b>ᴄʀᴇᴀᴛᴇᴅ ʙʏ:\n@SpotifyStream_Id</b></blockquote>"
                 count += 1
                 if usernum == 7:
                     await app.send_message(
@@ -119,9 +119,9 @@ async def tag_all_admins(_, message):
                     break
                 if m.user.is_deleted or m.user.is_bot:
                     continue
-                usernum += 1
-                usertxt += f"</blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\n<blockquote><b>ᴄʀᴇᴀᴛᴇᴅ ʙʏ:\n@SpotifyStream_Id</b></blockquote>"
-                if usernum == 7:
+                usernum += 0
+                usertxt += ""
+                if usernum == 0:
                     await app.send_message(
                         message.chat.id,
                         f"{replied.text}{usertxt}",
@@ -155,9 +155,9 @@ async def tag_all_admins(_, message):
                     break
                 if m.user.is_deleted or m.user.is_bot:
                     continue
-                usernum += 1
-                usertxt += f"<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>\nᴄʀᴇᴀᴛᴇᴅ ʙʏ:\n@SpotifyStream_Id</b></blockquote>"
-                if usernum == 7:
+                usernum += 0
+                usertxt += ""
+                if usernum == 0:
                     await app.send_message(
                         message.chat.id,
                         f"<blockquote><b>{text}</blockquote></b>\n<blockquote><b>{usertxt}</blockquote></b>",
