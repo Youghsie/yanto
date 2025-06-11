@@ -121,6 +121,7 @@ async def tag_all_admins(_, message):
                     continue
                 usernum += 1
                 usertxt += f"<blockquote><b>[{m.user.first_name}](tg://user?id={m.user.id})</b></blockquote>"
+                count += 1
                 if usernum == 7:
                     await app.send_message(
                         message.chat.id,
